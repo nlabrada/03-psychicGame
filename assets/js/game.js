@@ -8,7 +8,7 @@ var randomLetter = null;
 
 // updating the random letter
 function updateRandom() {
-   randomLetter = (char).split('')[(Math.floor(Math.random() * 26 ))];
+   randomLetter = char.split('')[(Math.floor(Math.random() * 26 ))];
 };
 // updating guesses left
 function updateGuesses() {
@@ -16,22 +16,7 @@ function updateGuesses() {
 }
 // show guessed letters
 function showGuessed() {
-    document.getElementById("guesses").innerHTML = guessedLetters.join(", ");
-}
-// checking for a winner
-function checkGuess() {
-    if ( userInput === randomLetter) {
-        wins++
-        alert("😱 dude you got it right.. kinda scary 🔮");
-        resetGame();
-    } else if( guessesLeft >= 1 ){
-        alert("you've got one try left!");
-        updateRandom();
-    } else if ( guessesLeft === 0){
-        losses++
-        alert("you lost to a computer smh");
-        resetGame();
-    }
+    document.getElementById("guessed").innerHTML = guessedLetters.join(", ");
 }
 // rest our game!
 function resetGame() {
@@ -39,6 +24,7 @@ function resetGame() {
     guessedLetters = [];
     updateRandom();
     updateGuesses();
+    showGuessed();
 }
 
 // run when document loads
@@ -53,16 +39,25 @@ document.onkeyup = function(event) {
     // make the user input lowercase
     var userInput = String.fromCharCode(event.which).toLowerCase();
 
-    // checking that the userInput is valid
-    if (userInput === "/^[A-Z]+$/i") {
-        // pushing the valid userInput to
-        // the guessedLetters array
-        guessedLetters.push(userInput);
-        // let's see if it's a winner winner chicken dinner
-        checkGuess();
-    } else {
-        // tell user to try valid input
-        alert("please choose a letter");
+    // pushing the valid userInput to
+    // the guessedLetters array
+    guessedLetters.push(userInput);
+
+    // update our guesses left and already guessed
+    updateGuesses();
+    showGuessed();
+    
+    // let's see if it's a winner winner chicken dinner
+    if ( userInput === randomLetter) {
+        wins++;
+        document.getElementById("wins").innerHTML = wins;
+        alert("😱 dude, you got it right.. kinda scary 🔮");
+        resetGame();
+    } else if ( guessesLeft === 0){
+        losses++;
+        document.getElementById("losses").innerHTML = losses;
+        alert("you lost to a computer smh");
+        resetGame();
     }
 
 }
