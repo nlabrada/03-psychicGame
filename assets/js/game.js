@@ -22,19 +22,32 @@ function showGuessed() {
 function checkGuess() {
     if ( userInput === randomLetter) {
         wins++
-        alert("😱 dude you got it right.. kinda scary 🔮")
-    } else {
+        alert("😱 dude you got it right.. kinda scary 🔮");
+        resetGame();
+    } else if( guessesLeft >= 1 ){
+        alert("you've got one try left!");
+        updateRandom();
+    } else if ( guessesLeft === 0){
         losses++
         alert("you lost to a computer smh");
+        resetGame();
     }
 }
+// rest our game!
+function resetGame() {
+    guessesLeft = 10;
+    guessedLetters = [];
+    updateRandom();
+    updateGuesses();
+}
+
 // run when document loads
 updateRandom();
 updateGuesses();
 
 // run this when they keyboard is clicked!
 document.onkeyup = function(event) {
-    // update guesses left
+    // take off a guess
     guessesLeft--
 
     // make the user input lowercase
@@ -47,11 +60,9 @@ document.onkeyup = function(event) {
         guessedLetters.push(userInput);
         // let's see if it's a winner winner chicken dinner
         checkGuess();
-        
     } else {
         // tell user to try valid input
         alert("please choose a letter");
-
     }
 
 }
