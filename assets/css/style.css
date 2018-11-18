@@ -14,11 +14,12 @@ div.custom-border{
     border: 5px solid #c0e1f0;
     border-radius: 10px;
     padding: 2em;
-    width: 40%;
-    height: 75%;
+    width: 80%;
+    height: 60%;
     position: relative;
     margin: 0 auto;
-    box-shadow: 15px 10px 50px 1px #c0e1f0;
+    margin-bottom: 5%;
+    box-shadow: 15px 10px 50px 1px #8ecce9;
 
 }
 div.custom-border:before{
@@ -40,7 +41,13 @@ div.custom-border:before{
 
 /* for desktop */
 @media only screen and (min-width: 768px) {
+    h1{
+        font-size: 50px;
+    }
     div.custom-border{
+        width: 40%;
+        height: 70%;
+        margin-bottom: 0%;
 
     }
 }
