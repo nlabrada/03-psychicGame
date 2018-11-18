@@ -5,21 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>psychic game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Faster+One|Fugaz+One|Lobster|Pattaya|Racing+Sans+One|Shrikhand" rel="stylesheet">
+    <!-- my css -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
+
 <body>
-    <h1>The Psychic Game</h1>
-    <div>
-        <p>Wins: <span id="wins">0</span></p>
-    </div>
-    <div>
-        <p>Losses: <span id="losses">0</span></p>
-    </div>
-    <div>
-        <p>Guesses Left: <span id="guesses">0</span></p>
-    </div>
-    <div>
-        <p>Already Guessed: <span id="guessed"></span></p>
+    <div class="container text-center">
+        <br>
+        <h1 >🔮 PSYCHIC 🔮</h1>
+        <br>
+        <div class="custom-border">
+            <div class="data">
+                <h3>Wins: <span id="wins">0</span></h3>
+                <h3>Losses: <span id="losses">0</span></h3>
+                <h3>Guesses Left: <span id="guesses">0</span></h3>
+                <h3>Already Guessed: <br><span id="guessed"></span></h3>
+            </div>
+        </div>
+        <br>
+        <h1 class="text-center">🔮 OPEN 🔮</h1>
     </div>
 
     <script type="text/javascript" src="./assets/js/game.js"></script>

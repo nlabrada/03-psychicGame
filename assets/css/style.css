@@ -1,0 +1,46 @@
+body{
+    font-family: 'Fugaz One', cursive;
+    background-color: black;
+}
+h1{
+    color: #f9e5be;
+}
+h3{
+        color: #f9e5be;
+
+}
+div.custom-border{
+    background-color: black;
+    border: 5px solid #c0e1f0;
+    border-radius: 10px;
+    padding: 2em;
+    width: 40%;
+    height: 75%;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 15px 10px 50px 1px #c0e1f0;
+
+}
+div.custom-border:before{
+    background: none;
+    border: 3px solid #f5d673;
+    border-radius: 10px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    pointer-events: none;
+}
+.data{
+    margin-top: 30%;
+}
+
+/* for desktop */
+@media only screen and (min-width: 768px) {
+    div.custom-border{
+
+    }
+}
