@@ -1,4 +1,5 @@
 # 🔮PLAY HERE 🔮
+https://nlabrada.github.io/psychicGame/
 
 ## Description
 * Game randomly selects a letter from the alphabet
